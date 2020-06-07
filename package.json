@@ -1,0 +1,72 @@
+{
+  "name": "@spenserca/serverless-api",
+  "version": "1.0.0",
+  "description": "An AWS API deployed with Serverless CLI",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier-standard --format"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spenserca/serverless-api.git"
+  },
+  "keywords": [
+    "aws",
+    "serverless",
+    "api",
+    "typescript"
+  ],
+  "author": "Spenser Andreassen <spenserca@gmail.com> (https://github.com/spenserca/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spenserca/serverless-api/issues"
+  },
+  "homepage": "https://github.com/spenserca/serverless-api#readme",
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "prettier-standard": "^16.3.0",
+    "serverless": "^1.72.0",
+    "serverless-domain-manager": "^4.1.1",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "ts-jest": "^26.1.0",
+    "typescript": "^3.9.5"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.ts"
+    ],
+    "coverageDirectory": "coverage",
+    "coveragePathIgnorePatterns": [
+      "/coverage/",
+      "/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx",
+      "node"
+    ],
+    "rootDir": ".",
+    "setupFiles": [],
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/*.spec.[jt]s"
+    ],
+    "transform": {
+      "\\.ts$": "ts-jest"
+    },
+    "verbose": false
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "always",
+    "semi": true
+  }
+}
