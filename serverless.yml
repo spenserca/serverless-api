@@ -1,0 +1,41 @@
+service: serverless-api-demo
+
+plugins:
+  - serverless-pseudo-parameters
+  - serverless-plugin-typescript
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: spenserandreassen.com
+    basePath: 'api/demo'
+    stage: ${opt:stage}
+    createRoute53Record: true
+
+provider:
+  apiName: serverless-api-demo
+  name: aws
+  profile: ${opt:profile}
+  region: ${opt:region, 'us-east-1'} # Default option
+  runtime: nodejs12.x
+  stackName: serverless-api-demo
+  stage: ${opt:stage}
+
+  logs:
+    restApi:
+      accessLogging: true
+      executionLogging: true
+      fullExecutionData: true
+      # pseudo-parameter plugin:
+      role: arn:aws:iam::#{AWS::AccountId}:role/ApiGatewayLogger
+
+functions:
+  helloWorld:
+    handler: src/helloWorld/index.helloWorld
+    name: hello
+    events:
+      - http:
+          path: hello
+          method: get
+          cors: true
+          integration: lambda

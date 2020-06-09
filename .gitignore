@@ -1,4 +1,6 @@
+.build
 .idea
+.serverless
 
 coverage
 node_modules
