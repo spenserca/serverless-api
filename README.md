@@ -18,5 +18,7 @@ An AWS API deployed with Serverless CLI
 
 ## Teardown
 
+1. Tear down custom domain:
+    - `serverless delete_domain --stage <stage_name> --profile <your_profile>`
 1. Teardown Serverless resources
     - `serverless remove --stage <stage_name> --profile <your_profile>`
