@@ -7,8 +7,8 @@ plugins:
 
 custom:
   customDomain:
-    domainName: spenserandreassen.com
-    basePath: 'api/demo'
+    domainName: ${opt:domainName}
+    basePath: 'demo'
     stage: ${opt:stage}
     createRoute53Record: true
 
@@ -31,7 +31,7 @@ provider:
 
 functions:
   helloWorld:
-    handler: src/helloWorld/index.helloWorld
+    handler: src/index.helloWorld
     name: hello
     events:
       - http:
