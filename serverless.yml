@@ -20,7 +20,6 @@ provider:
   runtime: nodejs12.x
   stackName: serverless-api-demo
   stage: ${opt:stage}
-
   logs:
     restApi:
       accessLogging: true
