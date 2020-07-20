@@ -12,6 +12,13 @@ An AWS API deployed with Serverless CLI
 4. Configure your AWS credentials
     - `serverless config credentials --provider aws --key <aws_access_key> --secret <aws_access_key_secret>`
     
+## Run Locally
+
+1. Basic invoke
+    - `serverless invoke local --function <function_name>`
+2. Invoke with data
+    - `serverless invoke local --function <function_name> --path data.json`
+    
 ## Deployment
 
 1. Create the custom domain:
