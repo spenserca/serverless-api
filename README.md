@@ -37,3 +37,7 @@ An AWS API deployed with Serverless CLI
     - `serverless delete_domain --stage <stage_name> --profile <your_profile> --domainName <your_domain>`
 1. Teardown Serverless resources
     - `serverless remove --stage <stage_name> --profile <your_profile> --domainName <your_domain>`
+
+## Enable Debug Mode for Serverless
+
+In order to get more detailed logs when running Serverless commands export `SLS_DEBUG=*` environment variable
