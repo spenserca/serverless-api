@@ -3,8 +3,8 @@ export const helloWorld = async (event: any, context: any) => {
 
   return {
     statusCode: 200,
-    body: {
+    body: JSON.stringify({
       message: `Hello ${name}!`
-    }
+    })
   };
 };

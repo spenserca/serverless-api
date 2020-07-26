@@ -1,5 +1,5 @@
-import { helloWorld } from './index';
 import { Chance } from 'chance';
+import { helloWorld } from './index';
 
 const chance = new Chance();
 
@@ -15,11 +15,13 @@ describe('when no name is passed', () => {
   });
 
   it('has a hello world message in the body', () => {
-    expect(actual.body).toEqual({ message: 'Hello World!' });
+    const expected = `{"message":"Hello World!"}`;
+
+    expect(actual.body).toEqual(expected);
   });
 });
 
-describe('when no name is passed', () => {
+describe('when name is passed as a query string parameter', () => {
   let name: string;
 
   beforeEach(async () => {
@@ -37,6 +39,8 @@ describe('when no name is passed', () => {
   });
 
   it('has a hello world message in the body', () => {
-    expect(actual.body).toEqual({ message: `Hello ${name}!` });
+    const expected = `{"message":"Hello ${name}!"}`;
+
+    expect(actual.body).toEqual(expected);
   });
 });
